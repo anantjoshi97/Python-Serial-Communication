@@ -1,5 +1,6 @@
 import serial
-ser = serial.Serial('/dev/tty.usbserial', 9600) 
+ser = serial.Serial('/dev/ttyACM1' , 9600)
+#ser = serial.Serial('/dev/tty.usbserial', 9600) 
 #ser = serial.Serial('/dev/ttyUSBx-1')
 #ser = serial.Serial('/dev/ttySx-1')
 #ser = serial.Serial('/dev/ttyCOMx') x = number after COM in Arduino IDE
