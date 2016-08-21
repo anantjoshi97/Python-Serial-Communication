@@ -1,3 +1,4 @@
+import datetime 
 import serial
 ser = serial.Serial('/dev/ttyACM1' , 9600)
 #ser = serial.Serial('/dev/tty.usbserial', 9600) 
@@ -8,5 +9,6 @@ while True:
 	i = ser.inWaiting()
 	if(i>0):	
     		print ser.readline()
+    		print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
     	else:
         	continue
