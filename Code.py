@@ -23,3 +23,7 @@ stdout, stderr = subprocess.process.communicate()
 """
 output = subprocess.check_output([])
 """
+#third try
+"""
+output = subprocess.check_output([], universal_newlines = TRUE)
+"""
