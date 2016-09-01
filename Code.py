@@ -9,9 +9,12 @@ ser = serial.Serial('/dev/ttyACM1' , 9600)
 #ser = serial.Serial('/dev/ttyCOMx') x = number after COM in Arduino IDE
 while True:
 	i = ser.inWaiting()
-	if(i>0):	
-    		print ser.readline()
-    		print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
+	if(i>0):
+		with open('test1','ab') as f:
+			f.write(ser.readline())
+			f.write('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
+    		#print ser.readline()
+    		#print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
     	else:
         	continue
 #first try 
