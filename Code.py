@@ -17,12 +17,22 @@ while True:
     		#print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now()))
     	else:
         	continue
-#first try 
-"""        	
-process = subprocess.Popen([], stdout=PIPE, stderr=PIPE, universal_newlines=TRUE)
-stdout, stderr = subprocess.process.communicate()
-"""
+        	
+#first try , successful
+ 
+PIPE = subprocess.PIPE
+process = subprocess.Popen(["predict", "-f" , "<satname>"],stdout=PIPE, stderr=PIPE, universal_newlines=0) 
+stdout, stderr = process.communicate()
+
+print stdout
+if len(stderr)>0 :
+	print "error" , stderr
+
 #second try
 """
 output = subprocess.check_output([])
+"""
+#third try
+"""
+output = subprocess.check_output([], universal_newlines = TRUE)
 """
