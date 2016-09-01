@@ -18,7 +18,7 @@ while True:
 #first try , successful
  
 PIPE = subprocess.PIPE
-process = subprocess.Popen([""],stdout=PIPE, stderr=PIPE, universal_newlines=0) 
+process = subprocess.Popen(["predict", "-f" , "<satname>"],stdout=PIPE, stderr=PIPE, universal_newlines=0) 
 stdout, stderr = process.communicate()
 
 print stdout
